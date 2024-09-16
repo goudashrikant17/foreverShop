@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { ShopContext } from "../Context/ShopContext";
 import { assets } from "../assets/assets";
+import { toast } from "react-toastify";
 
 const Product = () => {
   const { productId } = useParams();
@@ -109,8 +110,12 @@ const Product = () => {
             ))}
           </div>
 
-          <button type="submit" className=" bg-black text-white px-3 py-2 mt-5">
-            ADD TO CART
+          <button
+            onClick={() => toast.success("Successfully add")}
+            type="submit"
+            className=" bg-black text-white px-3 py-2 mt-5"
+          >
+           ADD TO CART
           </button>
 
           <hr className="my-2" />
